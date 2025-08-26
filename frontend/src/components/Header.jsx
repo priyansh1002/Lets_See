@@ -1,7 +1,21 @@
 import { assets } from '../assets/assets'
 import {delay, motion} from 'motion/react'
+// import {AppContext} from '../context/AppContext'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
 
 const Header = () => {
+
+  // const{user, setShowLogin}=useContext(AppContext)
+  const navigate=useNavigate()
+  const onClickHandler=()=>{
+    if(user){
+      navigate('/result')
+    }else{
+      setShowLogin(true)
+    }
+  }
+
   return (
     <motion.div className='flex flex-col justify-center items-center text-center my-20'
     initial={{opacity:0.2, y:100}}
@@ -28,7 +42,7 @@ const Header = () => {
       animate={{opacity:1, y:0}}
       viewport={{delay:0.6, duration:0.8}}
       >Unleash boundless creativity with AI – Turn your thoughts into stunning visual art instantly. Just type, and watch the magic unfold.</motion.p>
-      <motion.button className='sm:text-lg text-white bg-pink-700 w -auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full cursor-pointer'
+      <motion.button onClick={onClickHandler} className='sm:text-lg text-white bg-pink-700 w -auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full cursor-pointer'
       whileHover={{scale:1.05}}
       whileTap={{scale:0.95}}
       initial={{opacity:0}}
