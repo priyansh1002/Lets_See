@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules server.js"
   },
   "author": "priyansh singh chaudhary",
   "license": "ISC",
