@@ -1,12 +1,12 @@
 import { assets } from '../assets/assets'
 import {delay, motion} from 'motion/react'
-// import {AppContext} from '../context/AppContext'
+import {AppContext} from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react'
+import React,{ useContext } from 'react'
 
 const Header = () => {
 
-  // const{user, setShowLogin}=useContext(AppContext)
+  const{user, setShowLogin}=useContext(AppContext)
   const navigate=useNavigate()
   const onClickHandler=()=>{
     if(user){
@@ -57,6 +57,7 @@ const Header = () => {
       >
         {Array(6).fill('').map((item,index)=>(
           <motion.img
+          key={index}
           whileHover={{scale:1.05,duration:0.1}}
            className='rounded hover:scale-105 transition-all duration-300 cursor-pointer max-sm:w-10' src={index%2===0 ? assets.sample_img_2 : assets.sample_img_1} alt="" width={70} />
         ))}
