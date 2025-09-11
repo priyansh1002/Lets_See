@@ -4,7 +4,8 @@ import axios from 'axios';
 
 export const generateImage = async (req, res) => {
     try {
-        const { userId, prompt } = req.body;
+        const { prompt } = req.body;
+        const userId = req.user.id; // <-- from auth middleware
         const user = await userModel.findById(userId);
         if (!user || !prompt) {
             return res.json({ success: false, message: "Invalid user or prompt" });
