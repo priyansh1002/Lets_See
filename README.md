@@ -1,7 +1,12 @@
 # Lets_See 🎨
 
 AI web app for Text-to-Image Generation
-This project allows users to generate AI-powered images from text prompts. It’s a full-stack starter project with a React frontend and a Node.js/Express backend.
+Lets_See is a full-stack AI SaaS web application that generates images from text prompts.
+It provides a simple interface where users can type what they imagine, and the system uses an AI model (ClipDrop) to generate unique images.
+
+The project is designed as a starter SaaS app — meaning it has the right structure to grow into a full subscription-based product. You can extend it with features like user authentication, credits system, payment integration, image history, and cloud deployment.
+
+With a React.js frontend and a Node.js/Express backend, the app is easy to set up, customize, and deploy on platforms like Vercel, Render, or AWS.
 
 ## 🚀 Features
 🖼️ Generate images from text prompts
